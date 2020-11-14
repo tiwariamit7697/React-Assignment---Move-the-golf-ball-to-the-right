@@ -9,17 +9,17 @@ class App extends Component {
             posi : 0,
             ballPosition: { left: "0px" }
         };
-        this.renderBallOrButton = this.renderBallOrButton.bind(this);
-        this.buttonClickHandler = this.buttonClickHandler.bind(this);
+        this.renderBallOrButton = this.renderBallOrButton.bind(this)
+        this.buttonClickHandler = this.buttonClickHandler.bind(this)
         this.arrowKeyPress=this.arrowKeyPress.bind(this);
     };
-    arrowKeyPress(event)
+    arrowKeyPress(evt)
     {
-        if(event.keyCode===39)
+        if(evt.keyCode === 39)
         {
             if(this.state.renderBall)
             {
-                const newPosI=posi + 5;
+                const newPosI=this.state.posi + 5;
                 this.setState({posi:newPosI,
                                ballPosition:{left:newPosI+"px"}}
                 );
@@ -28,7 +28,7 @@ class App extends Component {
     }
 
     buttonClickHandler() {
-   this.setState({renderBall : true});
+   this.setState({renderBall:true});
    }
     renderBallOrButton() {
 		if (this.state.renderBall) {
